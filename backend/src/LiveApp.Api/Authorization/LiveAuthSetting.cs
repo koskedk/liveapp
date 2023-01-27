@@ -1,19 +1,23 @@
-﻿namespace LiveApp.Api;
+﻿using System.Collections.Generic;
 
-public class LiveAuthSetting
+namespace LiveApp.Api.Authorization
 {
-    public const string Key = "LiveAuth";
-    public string Authority { get; set; }
-    public string ClientId { get; set; }
-    public string Secret { get; set; }
-    public string Scope { get; set; }
-    public Dictionary<string, string> Scopes => GetScopes();
-
-    private Dictionary<string, string> GetScopes()
+    public class LiveAuthSetting
     {
-        if (!string.IsNullOrWhiteSpace(Scope))
-            return new() { { Scope, Scope } };
+        public const string Key = "LiveAuth";
+        public string Authority { get; set; }
+        public string ClientId { get; set; }
+        public string Secret { get; set; }
+        public string Scope { get; set; }
+        public string Flow { get; set; }
+        public Dictionary<string, string> Scopes => GetScopes();
 
-        return new();
+        private Dictionary<string, string> GetScopes()
+        {
+            if (!string.IsNullOrWhiteSpace(Scope))
+                return new() { { Scope, Scope } };
+
+            return new();
+        }
     }
 }
