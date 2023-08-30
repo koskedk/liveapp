@@ -411,3 +411,6 @@ ASALocalRun/
 !.vscode/launch.json
 !.vscode/extensions.json
 *.code-workspace
+
+#DEV stuff
+*.Development.json
