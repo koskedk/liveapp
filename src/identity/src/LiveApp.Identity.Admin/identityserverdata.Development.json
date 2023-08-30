@@ -1,0 +1,248 @@
+﻿{
+    "IdentityServerData": {
+        "IdentityResources": [
+            {
+                "Name": "roles",
+                "Enabled": true,
+                "DisplayName": "Roles",
+                "UserClaims": [
+                    "role"
+                ]
+            },
+            {
+                "Name": "openid",
+                "Enabled": true,
+                "Required": true,
+                "DisplayName": "Your user identifier",
+                "UserClaims": [
+                    "sub"
+                ]
+            },
+            {
+                "Name": "profile",
+                "Enabled": true,
+                "DisplayName": "User profile",
+                "Description": "Your user profile information (first name, last name, etc.)",
+                "Emphasize": true,
+                "UserClaims": [
+                    "name",
+                    "family_name",
+                    "given_name",
+                    "middle_name",
+                    "nickname",
+                    "preferred_username",
+                    "profile",
+                    "picture",
+                    "website",
+                    "gender",
+                    "birthdate",
+                    "zoneinfo",
+                    "locale",
+                    "updated_at"
+                ]
+            },
+            {
+                "Name": "email",
+                "Enabled": true,
+                "DisplayName": "Your email address",
+                "Emphasize": true,
+                "UserClaims": [
+                    "email",
+                    "email_verified"
+                ]
+            },
+            {
+                "Name": "address",
+                "Enabled": true,
+                "DisplayName": "Your address",
+                "Emphasize": true,
+                "UserClaims": [
+                    "address"
+                ]
+            }
+        ],
+        "ApiScopes": [
+            {
+                "Name": "LiveAppId_api",
+                "DisplayName": "LiveAppId_api",
+                "Required": true,
+                "UserClaims": [
+                    "role",
+                    "name"
+                ]
+            },
+            {
+                "Name": "registry.read",
+                "DisplayName": "Read Registry"
+            },
+            {
+                "Name": "registry.manage",
+                "DisplayName": "Manage Registry"
+            },
+            {
+                "Name": "billing.read",
+                "DisplayName": "Read Billing"
+            },
+            {
+                "Name": "billing.manage",
+                "DisplayName": "Manage Billing"
+            }
+        ],
+        "ApiResources": [
+            {
+                "Name": "LiveAppId_api",
+                "Scopes": ["LiveAppId_api"]
+            },
+            {
+                "Name": "billing_api",
+                "Scopes": ["billing.read","billing.manage"]
+            },
+            {
+                "Name": "registry_api",
+                "Scopes": ["registry.read","registry.manage"]
+            }
+        ],
+        "Clients": [
+            {
+                "ClientId": "LiveAppId",
+                "ClientName": "LiveAppId",
+                "ClientUri": "https://localhost:44303",
+                "AllowedGrantTypes": [
+                    "authorization_code"
+                ],
+                "RequirePkce": true,
+                "ClientSecrets": [
+                    {
+                        "Value": "LiveAppIdSecret"
+                    }
+                ],
+                "RedirectUris": [
+                    "https://localhost:44303/signin-oidc"
+                ],
+                "FrontChannelLogoutUri": "https://localhost:44303/signout-oidc",
+                "PostLogoutRedirectUris": [
+                    "https://localhost:44303/signout-callback-oidc"
+                ],
+                "AllowedCorsOrigins": [
+                    "https://localhost:44303"
+                ],
+                "AllowedScopes": [
+                    "openid",
+                    "email",
+                    "profile",
+                    "roles"
+                ]
+            },
+            {
+                "ClientId": "LiveAppId_api_swaggerui",
+                "ClientName": "LiveAppId_api_swaggerui",
+                "AllowedGrantTypes": [
+                    "authorization_code"
+                ],
+                "RequireClientSecret": false,
+                "RequirePkce": true,
+                "RedirectUris": [
+                    "https://localhost:44302/swagger/oauth2-redirect.html"
+                ],
+                "AllowedScopes": [
+                    "LiveAppId_api"
+                ],
+                "AllowedCorsOrigins": [
+                    "https://localhost:44302"
+                ]
+            },
+            {
+                "ClientId": "liveapp.app",
+                "ClientName": "liveapp.app",
+                "ClientUri": "https://localhost:44455",
+                "AllowedGrantTypes": [
+                    "authorization_code"
+                ],
+                "RequirePkce": true,
+                "ClientSecrets": [
+                    {
+                        "Value": "liveapp.app.secret"
+                    }
+                ],
+                "RedirectUris": [
+                    "https://localhost:44455"
+                ],
+                "FrontChannelLogoutUri": "https://localhost:44455/signout-oidc",
+                "PostLogoutRedirectUris": [
+                    "https://localhost:44455/signout-callback-oidc"
+                ],
+                "AllowedCorsOrigins": [
+                    "https://localhost:44455"
+                ],
+                "AllowedScopes": [
+                    "openid",
+                    "email",
+                    "profile",
+                    "roles",
+                    "registry.read",
+                    "registry.manage",
+                    "billing.read",
+                    "billing.manage"
+                ]
+            },
+            {
+                "ClientId": "registry.api",
+                "ClientName": "registry.api",
+                "ClientUri": "https://localhost:5011",
+                "AllowedGrantTypes": [
+                    "authorization_code"
+                ],
+                "RequireClientSecret": false,
+                "RequirePkce": true,
+                "ClientSecrets": [
+                    {
+                        "Value": "registry.api.secret"
+                    }
+                ],
+                "RedirectUris": [
+                    "https://localhost:5011/swagger/oauth2-redirect.html"
+                ],
+                "AllowedCorsOrigins": [
+                    "https://localhost:5011"
+                ],
+                "AllowedScopes": [
+                    "openid",
+                    "email",
+                    "profile",
+                    "roles",
+                    "registry.read",
+                    "registry.manage"
+                ]
+            },
+            {
+                "ClientId": "billing.api",
+                "ClientName": "billing.api",
+                "ClientUri": "https://localhost:5021",
+                "AllowedGrantTypes": [
+                    "authorization_code"
+                ],
+                "RequireClientSecret": false,
+                "RequirePkce": true,
+                "ClientSecrets": [
+                    {
+                        "Value": "billing.api.secret"
+                    }
+                ],
+                "RedirectUris": [
+                    "https://localhost:5021/swagger/oauth2-redirect.html"
+                ],
+                "AllowedCorsOrigins": [
+                    "https://localhost:5021"
+                ],
+                "AllowedScopes": [
+                    "openid",
+                    "email",
+                    "profile",
+                    "roles",
+                    "billing.read",
+                    "billing.manage"
+                ]
+            }
+        ]
+    }
+}
