@@ -5,7 +5,8 @@
       "Override": {
         "Microsoft": "Information",
         "System": "Warning",
-        "Skoruba": "Information"
+        "Microsoft.AspNetCore.SpaProxy": "Information",
+        "Microsoft.Hosting.Lifetime": "Information"
       }
     },
     "WriteTo": [
@@ -15,7 +16,7 @@
       {
         "Name": "File",
         "Args": {
-          "path": "Log/liveapp_identity_api.log",
+          "path": "Log/liveapp.log",
           "rollingInterval": "Day"
         }
       },

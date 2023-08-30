@@ -3,6 +3,8 @@
     "MinimumLevel": {
       "Default": "Error",
       "Override": {
+        "Microsoft": "Information",
+        "System": "Warning",
         "Skoruba": "Information"
       }
     },

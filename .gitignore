@@ -412,5 +412,8 @@ ASALocalRun/
 !.vscode/extensions.json
 *.code-workspace
 
+#ng
+.angular/cache
+
 #DEV stuff
 *.Development.json
