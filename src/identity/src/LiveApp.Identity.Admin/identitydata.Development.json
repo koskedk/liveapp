@@ -1,0 +1,87 @@
+﻿{
+  "IdentityData": {
+    "Roles": [
+      {
+        "Name": "super"
+      },
+      {
+        "Name": "registry",
+        "Claims": [
+          {
+            "Type": "Permission",
+            "Value": "read:registry"
+          },
+          {
+            "Type": "Permission",
+            "Value": "write:registry"
+          },
+          {
+            "Type": "Permission",
+            "Value": "read:billing"
+          }
+        ]
+      },
+      {
+        "Name": "billing",
+        "Claims": [
+          {
+            "Type": "Permission",
+            "Value": "read:billing"
+          },
+          {
+            "Type": "Permission",
+            "Value": "write:billing"
+          },
+          {
+            "Type": "Permission",
+            "Value": "read:registry"
+          }
+        ]
+      }
+    ],
+    "Users": [
+      {
+        "Username": "admin",
+        "Password": "P@ssword47",
+        "Email": "admin@liveapp.com",
+        "Roles": [
+          "super"
+        ],
+        "Claims": [
+          {
+            "Type": "name",
+            "Value": "admin"
+          }
+        ]
+      },
+      {
+        "Username": "billing",
+        "Password": "P@ssword47",
+        "Email": "billing@liveapp.com",
+        "Roles": [
+          "billing"
+        ],
+        "Claims": [
+          {
+            "Type": "name",
+            "Value": "billing"
+          }
+        ]
+      },
+      {
+        "Username": "registry",
+        "Password": "P@ssword47",
+        "Email": "registry@liveapp.com",
+        "Roles": [
+          "registry"
+        ],
+        "Claims": [
+          {
+            "Type": "name",
+            "Value": "registry"
+          }
+        ]
+      }
+    ]
+  }
+}
